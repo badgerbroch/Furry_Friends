@@ -7,16 +7,10 @@ DATA_ROOT = Path.home() / "Downloads" / "oxford_images" / "images"
 
 OUT_DIR = DREW_ROOT_PATH / "pets_breeds"
 
-CAT_DIR = OUT_DIR / "cat"
-DOG_DIR = OUT_DIR / "dog"
-
-CAT_DIR.mkdir(parents=True, exist_ok=True)
-DOG_DIR.mkdir(parents=True, exist_ok=True)
-
 
 for img_path in DATA_ROOT.glob("*.jpg"):
     stem = img_path.stem
-    breed_part = stem.split("_")[0]
+    breed_part = stem.rsplit("_", 1)[0]
     first_char = breed_part[0]
     breed_dir = OUT_DIR / breed_part
     breed_dir.mkdir(parents=True, exist_ok=True)
