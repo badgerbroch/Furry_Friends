@@ -1,7 +1,11 @@
 import random
-from shutil import copy2, rmtree
 from pathlib import Path
-from Furry_Friends.src.constants import DREW_ROOT_PATH
+from shutil import copy2, rmtree
+
+from src.constants import DREW_ROOT_PATH
+
+# from constants import DREW_ROOT_PATH
+
 
 
 def make_splits(
@@ -54,8 +58,8 @@ def make_splits(
 
 
 if __name__ == "__main__":
-    raw_root = DREW_ROOT_PATH / "pets_raw"
-    out_root = DREW_ROOT_PATH / "pets_split"
+    raw_root = DREW_ROOT_PATH / "pets_breeds"
+    out_root = DREW_ROOT_PATH / "pets_breed_split"
     make_splits(
         raw_root=raw_root,
         out_root=out_root,
